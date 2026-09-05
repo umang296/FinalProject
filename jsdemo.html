@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid px-3 px-md-4">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-3 me-1"></span>ITWD6.408
+            </a>
+
+            <!-- Mobile search button (visible on small) -->
+            <button class="btn btn-search d-inline d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fs-6 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebAPI.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="jsdemo.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-research.html">RESEARCH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Desktop search button (large screens) -->
+            <button class="btn btn-search d-none d-lg-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Collapsible Search Bar -->
+    <div class="collapse" id="collapseSearch">
+        <div class="container py-2">
+            <div class="card card-body shadow-sm">
+                <form class="d-flex" role="search" method ="get" action="https://www.google.com/search">
+                    <input class="form-control me-2" type="search" placeholder="Search the site…" aria-label="Search" />
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="accordion row align-items-start g-1" id="accordionJs">
+            <!--Group 4 buttons in this division: col-6 gives a 2x2 grid on mobile, stacked on desktop-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo1"
+                            aria-expanded="true" aria-controls="demo1">
+                        DEMO 1
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo2"
+                            aria-expanded="false" aria-controls="demo2">
+                        DEMO 2
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo3"
+                            aria-expanded="false" aria-controls="demo3">
+                        DEMO 3
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo4"
+                            aria-expanded="false" aria-controls="demo4">
+                        DEMO 4
+                    </button>
+                </h2>
+            </div>
+
+            <!--Group 4 content areas here-->
+            <div class="col-12 col-lg-9">
+
+                <!-- DEMO 1: Automatic & Manual Slideshow -->
+                <div class="accordion-item">
+                    <div id="demo1" class="accordion-collapse collapse show" data-bs-parent="#accordionJs">
+                        <div class="accordion-body" style="min-height: 50vh;">
+
+                            <h6 class="text-center">Automatic Slideshow</h6>
+                            <div class="slideshow-wrap mb-5" id="autoSlideshow">
+                                <div class="slide is-active">
+                                    <img src="Images/Asus.webp" alt="Asus Laptop">
+                                    <div class="slide-caption">
+                                        <p class="small mb-0">Description: A sleek, lightweight laptop suitable for everyday work, study, and entertainment.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <img src="Images/HP.webp" alt="HP Laptop">
+                                    <div class="slide-caption">
+                                        <p class="small mb-0">Description: A practical laptop with a large display, suitable for work, study, and multitasking.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <img src="Images/Lenono_Thinkbook.webp" alt="Lenovo ThinkBook">
+                                    <div class="slide-caption">
+                                        <p class="small mb-0">Description: A professional, slim laptop designed for productivity, study, and everyday business tasks.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="text-center">Manual Slideshow</h6>
+                            <div class="slideshow-wrap" id="manualSlideshow">
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="prevSlide">PREVIOUS</button>
+                                    <div class="flex-grow-1">
+                                        <div class="slide is-active">
+                                            <img src="Images/Asus.webp" alt="ASUS Laptop">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="Images/HP.webp" alt="HP Laptop">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="Images/Lenono_Thinkbook.webp" alt="Lenovo ThinkBook">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="nextSlide">NEXT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEMO 2: Dropdown menu + Add to List -->
+                <div class="accordion-item">
+                    <div id="demo2" class="accordion-collapse collapse" data-bs-parent="#accordionJs">
+                        <div class="accordion-body" style="min-height: 50vh;">
+
+                            <h5 class="text-center mb-3">Dropdown Menu and Add an item to the list</h5>
+
+                            <div class="row justify-content-center mb-4">
+                                <div class="col-auto">
+                                    <label for="itemSelect" class="form-label">Select item</label>
+                                    <select id="itemSelect" class="form-select"></select>
+                                </div>
+                            </div>
+
+                            <div class="item-preview mx-auto mb-4" style="max-width:420px;" id="itemPreview"></div>
+
+                            <h6 class="text-center">Add new item (product) to the existing list</h6>
+                            <form id="addItemForm" class="row g-2 justify-content-center" style="max-width:420px; margin:0 auto;">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" id="newItemTitle" placeholder="Title" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="number" class="form-control" id="newItemPrice" placeholder="Price" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="url" class="form-control" id="newItemImage" placeholder="Image URL">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-sm">ADD TO LIST</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEMO 3: Add comment / rate a product -->
+                <div class="accordion-item">
+                    <div id="demo3" class="accordion-collapse collapse" data-bs-parent="#accordionJs">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <iframe id="commentFrame" src="addreview.html" title="Add a review demo">Loading…</iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEMO 4: Shopping cart -->
+                <div class="accordion-item">
+                    <div id="demo4" class="accordion-collapse collapse" data-bs-parent="#accordionJs">
+                        <div class="accordion-body" style="min-height: 50vh;">
+
+                            <h5 class="text-center mb-3">SHOPPING-CART</h5>
+                            <div class="text-center mb-4">
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="viewCartBtn">VIEW ITEMS IN SHOPPING CART (<span id="cartCount">0</span>)</button>
+                            </div>
+
+                            <div id="cartPanel" class="d-none mb-4">
+                                <h6>Your cart</h6>
+                                <div id="cartItems"><p class="text-muted small mb-0">Your cart is empty.</p></div>
+                            </div>
+
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3" id="productGrid"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center gy-2 text-center text-md-start">
+
+                <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start">
+                    <span class="bi bi-linkedin text-info m-1 fs-4"></span>
+                    <span class="bi bi-facebook text-success m-1 fs-4"></span>
+                    <span class="bi bi-twitter text-info m-1 fs-4"></span>
+                    <span class="bi bi-youtube text-danger m-1 fs-4"></span>
+                </div>
+
+                <div class="col-12 col-md-4 text-center">
+                    ©️ 2026 Umang Maharjan
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end pe-3">
+                    <button type="button" class="btn btn-link text-dark fw-semibold text-decoration-none p-0" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        Privacy Policy
+                    </button>
+                </div>
+                <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="privacyModalLabel">
+                                    <span class="bi bi-shield-lock me-2"></span>Privacy Policy
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="font-size: 0.95rem; line-height: 1.7;">
+                                <p><strong>Disclosure of Personal Information</strong><br />
+                                We do not sell, trade, or otherwise share your personal information with
+                                outside parties, except where required by law or to provide a service
+                                you've specifically requested.</p>
+
+                                <p><strong>Protection of Personal Information</strong><br />
+                                We take the security of your personal information seriously and take
+                                reasonable steps to protect it from misuse, loss, or unauthorised access.</p>
+
+                                <p><strong>Your Rights to Access Your Personal Information</strong><br />
+                                You have the right to access, correct, or request deletion of your personal
+                                information at any time. To do so, please contact us using the details below.</p>
+
+                                <p><strong>Changes to This Policy</strong><br />
+                                This Privacy Policy may be updated from time to time. Any changes will be
+                                posted on this page along with an updated effective date.</p>
+
+                                <p><strong>Contact</strong><br />
+                                If you have any questions or concerns about this Privacy Policy,
+                                please contact <strong>Umang Maharjan</strong> at
+                                <a href="mailto:umangmaharjan.com">umangmaharjan.com</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                    <span class="bi bi-check2 me-1"></span>Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- DEMO 1: Automatic + Manual Slideshow -->
+    <script>
+    var autoSlides = document.querySelectorAll('#autoSlideshow .slide');
+    var autoIndex = 0;
+
+    setInterval(function(){
+        autoSlides[autoIndex].classList.remove('is-active');
+        autoIndex = (autoIndex + 1) % autoSlides.length;
+        autoSlides[autoIndex].classList.add('is-active');
+    }, 3000);
+
+    var manualSlides = document.querySelectorAll('#manualSlideshow .slide');
+    var manualCaptions = [
+        'Description: a solid 15-inch laptop with all-day battery life.',
+        'Description: slim, portable, and ideal for reading and note-taking.',
+        'Description: a fast, modern phone for study and everyday use.'
+    ];
+    var manualIndex = 0;
+    var manualCaptionEl = document.getElementById('manualCaption');
+
+    function showManualSlide(i){
+        manualSlides[manualIndex].classList.remove('is-active');
+        manualIndex = (i + manualSlides.length) % manualSlides.length;
+        manualSlides[manualIndex].classList.add('is-active');
+        manualCaptionEl.textContent = manualCaptions[manualIndex];
+    }
+
+    document.getElementById('prevSlide').addEventListener('click', function(){
+        showManualSlide(manualIndex - 1);
+    });
+    document.getElementById('nextSlide').addEventListener('click', function(){
+        showManualSlide(manualIndex + 1);
+    });
+    </script>
+
+    <!-- DEMO 2: Dropdown menu + Add to List (data stored in a JS array) -->
+    <script>
+    var items = [
+        { title: 'ASUS Chromebook', price: 2244, image: 'Images/Asus.webp', description: 'A sleek, lightweight laptop suitable for everyday work, study, and entertainment.' },
+        { title: 'Apple MacBook Neo', price: 2865, image: 'Images/Macbook.webp', description: 'A slim, premium laptop designed for productivity, study, and creative work.' },
+        { title: 'Ipad Air', price: 2151, image: 'Images/Ipad.webp', description: 'A compact tablet ideal for browsing, note-taking, media, and creative tasks.' }
+    ];
+
+    var itemSelect = document.getElementById('itemSelect');
+    var itemPreview = document.getElementById('itemPreview');
+
+    function renderOptions(){
+        itemSelect.innerHTML = '';
+        for (var i = 0; i < items.length; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            option.textContent = items[i].title;
+            itemSelect.appendChild(option);
+        }
+    }
+
+    function renderItemPreview(){
+        var item = items[itemSelect.value];
+        if (!item) { itemPreview.innerHTML = ''; return; }
+        itemPreview.innerHTML =
+            '<img src="' + item.image + '" alt="' + item.title + '" class="mb-2 d-block mx-auto">' +
+            '<h6 class="mb-1">' + item.title + '</h6>' +
+            '<p class="small text-muted mb-1">' + item.description + '</p>' +
+            '<p class="fw-bold mb-0">Price: $' + item.price + '</p>';
+    }
+
+    itemSelect.addEventListener('change', renderItemPreview);
+
+    document.getElementById('addItemForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var title = document.getElementById('newItemTitle').value.trim();
+        var price = parseFloat(document.getElementById('newItemPrice').value);
+        var image = document.getElementById('newItemImage').value.trim() ;
+
+        items.push({ title: title, price: price, image: image, description: 'Added by user.' });
+        renderOptions();
+        itemSelect.value = items.length - 1;
+        renderItemPreview();
+        this.reset();
+    });
+
+    renderOptions();
+    renderItemPreview();
+    </script>
+
+    <!-- DEMO 4: Shopping cart -->
+    <script>
+    var products = [
+        { title: 'HP', price: 2211, image: 'Images/HP.webp', description: 'A versatile 2-in-1 laptop for study and everyday use.' },
+        { title: 'Apple Neo ', price: 2299, image: 'Images/Macbook.webp', description: 'Ultra-light and fast, great for on-the-go work.' },
+        { title: 'Ipad Air', price: 2151, image: 'Images/Ipad.webp', description: 'A compact tablet ideal for browsing, note-taking, media, and creative tasks.' },
+        { title: 'Asus Laptop', price: 2151, image: 'Images/Asus.webp', description: ' A sleek, lightweight laptop suitable for everyday work, study, and entertainment.' },
+        { title: 'Apple IPhone 17', price: 1799, image: 'Images/Iphone17.webp', description: 'A modern smartphone designed for communication, photography, apps, and everyday use.' },
+        { title: 'Lenovo ThinkBook', price: 2100, image: 'Images/Lenono_Thinkbook.webp', description: 'A professional, slim laptop designed for productivity, study, and everyday business tasks.' }
+    ];
+
+    var cart = []; // JS array holding items added to the cart
+    var productGrid = document.getElementById('productGrid');
+    var cartItemsEl = document.getElementById('cartItems');
+    var cartCountEl = document.getElementById('cartCount');
+    var cartPanel = document.getElementById('cartPanel');
+
+    function renderProducts(){
+        productGrid.innerHTML = '';
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            var col = document.createElement('div');
+            col.className = 'col';
+            col.innerHTML =
+                '<div class="product-card">' +
+                    '<img src="' + product.image + '" alt="' + product.title + '">' +
+                    '<h6>' + product.title + '</h6>' +
+                    '<p class="small text-muted">' + product.description + '</p>' +
+                    '<p class="fw-bold">Price: $' + product.price + '</p>' +
+                    '<button type="button" class="btn btn-primary btn-sm w-100 add-to-cart-btn" data-index="' + i + '">Add to Cart</button>' +
+                '</div>';
+            productGrid.appendChild(col);
+        }
+    }
+
+    function renderCart(){
+        cartCountEl.textContent = cart.length;
+        if (cart.length === 0){
+            cartItemsEl.innerHTML = '<p class="text-muted small mb-0">Your cart is empty.</p>';
+            return;
+        }
+        var html = '';
+        for (var i = 0; i < cart.length; i++) {
+            html += '<p class="small mb-1">' + cart[i].title + ' — $' + cart[i].price + '</p>';
+        }
+        cartItemsEl.innerHTML = html;
+    }
+
+    productGrid.addEventListener('click', function(e){
+        if (!e.target.classList.contains('add-to-cart-btn')) { return; }
+        var index = e.target.getAttribute('data-index');
+        cart.push(products[index]);
+        renderCart();
+    });
+
+    document.getElementById('viewCartBtn').addEventListener('click', function(){
+        cartPanel.classList.toggle('d-none');
+    });
+
+    renderProducts();
+    renderCart();
+    </script>
+</body>
+</html>

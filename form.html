@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid px-3 px-md-4">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-3 me-1"></span>ITWD6.408
+            </a>
+
+            <!-- Mobile search button (visible on small) -->
+            <button class="btn btn-search d-inline d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fs-6 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebAPI.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jsdemo.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-research.html">RESEARCH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Desktop search button (large screens) -->
+            <button class="btn btn-search d-none d-lg-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Collapsible Search Bar -->
+    <div class="collapse" id="collapseSearch">
+        <div class="container py-2">
+            <div class="card card-body shadow-sm">
+                <form class="d-flex" role="search" method ="get" action="https://www.google.com/search">
+                    <input class="form-control me-2" type="search" placeholder="Search the site…" aria-label="Search" />
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <h3>HTML FORM AND GOOGLE FORM</h3>
+        <div class="accordion row align-items-start g-1" id="accordionExample">
+            <!--Group 2 buttons in this division-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#collapseOne"
+							aria-expanded="true" aria-controls="collapseOne">
+                        HTML FORM
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" 
+						data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                        aria-expanded="false" aria-controls="collapseTwo">
+						GOOGLE FORM
+                    </button>
+                </h2>
+            </div>
+
+            <!--Group 2 content areas here-->
+            <div class="col-12 col-lg-9"> 
+                <div class="accordion-item bg-success">
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            
+                            <h4 class="text-center mb-4">Mobile Technology Form</h4>
+
+                            <!--HTML FORM -->
+                            <form name="mobile-techno-form" novalidate>
+                                <div class="row mb-3">
+                                    <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="fname" name="fname" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <label for="lname" class="col-sm-2 col-form-label">Last Name:</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="lname" name="lname" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                                </div>
+
+                                <fieldset class="row mb-3">
+                                    <legend class="col-form-label col-sm-2 pt-0">Address</legend>
+                                    <div class="col-sm-10">
+                                        <div class="mb-2">
+                                            <label for="address1" class="form-label">line 1:</label>
+                                            <input type="text" class="form-control" id="address1" name="address1" required>
+                                            <div class="invalid-feedback">Please enter address line 1.</div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="address2" class="form-label">line 2:</label>
+                                            <input type="text" class="form-control" id="address2" name="address2">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="towncity" class="form-label">Town/City:</label>
+                                            <input type="text" class="form-control" id="towncity" name="towncity" required>
+                                            <div class="invalid-feedback">Please enter your town/city.</div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="row mb-3">
+                                    <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" checked>
+                                            <label class="form-check-label" for="gridRadios1">MALE</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="female">
+                                            <label class="form-check-label" for="gridRadios2">FEMALE</label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="other">
+                                            <label class="form-check-label" for="gridRadios3">OTHER</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="row mb-3">
+                                    <legend class="col-form-label col-sm-2 pt-0">Mobile Phone Type:</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="mobileType" id="mobileType1" value="Windows">
+                                            <label class="form-check-label" for="mobileType1">Windows</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="mobileType" id="mobileType2" value="Apple">
+                                            <label class="form-check-label" for="mobileType2">Apple</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="mobileType" id="mobileType3" value="Android">
+                                            <label class="form-check-label" for="mobileType3">Android</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="mobileType" id="mobileType4" value="Other">
+                                            <label class="form-check-label" for="mobileType4">Other</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="row mb-3">
+                                    <label for="mobileProvider" class="col-sm-2 col-form-label">Mobile Provider:</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" id="mobileProvider" name="mobileProvider" style="max-width:220px;">
+                                            <option value="None" selected>None</option>
+                                            <option value="Spark">Spark</option>
+                                            <option value="Vodafone">Vodafone</option>
+                                            <option value="Now">Now</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="studyUse" class="col-sm-2 col-form-label">Do you use your phone for study? Please explain</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" id="studyUse" name="studyUse" rows="3"></textarea>
+                                    </div>
+                                </div>
+
+                                <div id="formFeedback" class="alert alert-success d-none" role="alert"></div>
+
+                                <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                <button type="reset" class="btn btn-secondary">RESET</button>
+                            </form>
+ 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-primary">
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7oO1lVvvEnSVLBgMwoyJjWmaAQmeuyucUz8PVoeqEDL5NNQ/viewform?embedded=true" width="640" height="1952" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> 
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                    <h3>
+                        <span class="bi bi-linkedin text-info m-1"></span>
+                        <span class="bi bi-facebook text-success m-1"></span>
+                        <span class="bi bi-twitter text-info m-1"></span>
+                        <span class="bi bi-youtube text-danger m-1"></span>
+                    </h3>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    ©️ 2026 Umang Maharjan
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end pe-3">
+                    <button type="button" class="btn btn-link text-dark fw-semibold text-decoration-none p-0" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        Privacy Policy
+                    </button>
+                </div>
+                <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="privacyModalLabel">
+                                    <span class="bi bi-shield-lock me-2"></span>Privacy Policy
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="font-size: 0.95rem; line-height: 1.7;">
+                                <p><strong>Disclosure of Personal Information</strong><br />
+                                We do not sell, trade, or otherwise share your personal information with
+                                outside parties, except where required by law or to provide a service
+                                you've specifically requested.</p>
+
+                                <p><strong>Protection of Personal Information</strong><br />
+                                We take the security of your personal information seriously and take
+                                reasonable steps to protect it from misuse, loss, or unauthorised access.</p>
+
+                                <p><strong>Your Rights to Access Your Personal Information</strong><br />
+                                You have the right to access, correct, or request deletion of your personal
+                                information at any time. To do so, please contact us using the details below.</p>
+
+                                <p><strong>Changes to This Policy</strong><br />
+                                This Privacy Policy may be updated from time to time. Any changes will be
+                                posted on this page along with an updated effective date.</p>
+
+                                <p><strong>Contact</strong><br />
+                                If you have any questions or concerns about this Privacy Policy,
+                                please contact <strong>Umang Maharjan</strong> at
+                                <a href="mailto:umangmaharjan.com">umangmaharjan.com</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                    <span class="bi bi-check2 me-1"></span>Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+    (function(){
+        var form = document.forms['mobile-techno-form'];
+        var submissions = []; // stores every valid submission for this session
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            if (!form.checkValidity()){
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
+            var data = {
+                firstName: form.fname.value.trim(),
+                lastName: form.lname.value.trim(),
+                addressLine1: form.address1.value.trim(),
+                addressLine2: form.address2.value.trim(),
+                townCity: form.towncity.value.trim(),
+                gender: form.gridRadios.value,
+                mobileType: Array.from(form.querySelectorAll('input[name="mobileType"]:checked')).map(function(cb){ return cb.value; }),
+                mobileProvider: form.mobileProvider.value,
+                studyUse: form.studyUse.value.trim()
+            };
+
+            submissions.push(data);
+            console.log('mobile-techno-form submissions:', submissions);
+
+            var feedback = document.getElementById('formFeedback');
+            feedback.textContent = 'Thanks ' + data.firstName + '! Your response has been recorded (' + submissions.length + ' submission(s) stored this session).';
+            feedback.classList.remove('d-none');
+
+            form.reset();
+            form.classList.remove('was-validated');
+        });
+    })();
+    </script>
+</body>
+</html>

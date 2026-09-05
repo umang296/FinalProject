@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid px-3 px-md-4">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-3 me-1"></span>ITWD6.408
+            </a>
+
+            <!-- Mobile search button (visible on small) -->
+            <button class="btn btn-search d-inline d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fs-6 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="WebAPI.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jsdemo.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-research.html">RESEARCH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Desktop search button (large screens) -->
+            <button class="btn btn-search d-none d-lg-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Collapsible Search Bar -->
+    <div class="collapse" id="collapseSearch">
+        <div class="container py-2">
+            <div class="card card-body shadow-sm">
+                <form class="d-flex" role="search" method ="get" action="https://www.google.com/search">
+                    <input class="form-control me-2" type="search" placeholder="Search the site…" aria-label="Search" />
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <h3>JSON RULES AND REST API</h3>
+        <div class="accordion row align-items-start g-1" id="accordionApi">
+            <!--Group 2 buttons in this division-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseRules"
+                            aria-expanded="true" aria-controls="collapseRules">
+                        JSON RULES
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseRest"
+                            aria-expanded="false" aria-controls="collapseRest">
+                        REST API
+                    </button>
+                </h2>
+            </div>
+
+            <!--Group 2 content areas here-->
+            <div class="col-12 col-lg-9">
+                <div class="accordion-item">
+                    <div id="collapseRules" class="accordion-collapse collapse show" data-bs-parent="#accordionApi">
+                        <div class="accordion-body" style="min-height: 50vh;">
+
+                            <h4 class="text-center mb-3">JSON Rules</h4>
+                            <p class="text-muted text-center">Important rules that must be adhered to in order to create valid JSON data.</p>
+
+                            <!-- Search on the JSON rules -->
+                            <div class="mb-4 mx-auto" style="max-width:420px;">
+                                <input type="search" id="ruleSearch" class="form-control" placeholder="Search rules… e.g. 'array', 'comma', 'key'">
+                            </div>
+
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="ruleList">
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 1: Objects</h6>
+                                        <p class="small mb-0">A JSON object is enclosed in curly braces <code>{ }</code> and contains comma-separated key/value pairs.</p>
+                                        <pre>{ "city": "Auckland", "population": 1650000 }</pre>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 2: Keys</h6>
+                                        <p class="small mb-0">Keys must be strings, and must be wrapped in double quotes,single quotes or unquoted keys are not valid.</p>
+                                        <pre>{ "productName": "Laptop" }</pre>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 3: Values</h6>
+                                        <p class="small mb-0">A value can only be a string, number, object, array, boolean, or null. Functions and undefined are not allowed.</p>
+                                        <pre>{ "available": false, "rating": 4.5 }</pre>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 4: Arrays</h6>
+                                        <p class="small mb-0">Arrays are enclosed in square brackets <code>[ ]</code> and hold an ordered list of values.</p>
+                                        <pre>{ "fruits": ["apple", "banana", "mango"] }</pre>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 5: No trailing commas</h6>
+                                        <p class="small mb-0">A comma must never appear after the last value in an object or array,this is a common JSON error.</p>
+                                        <pre>{ "x": 10, "y": 20 }  ✔
+{ "x": 10, "y": 20, }  ✘</pre>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="rule-card">
+                                        <h6>Rule 6: No comments</h6>
+                                        <p class="small mb-0">Unlike JavaScript, JSON does not support <code>//</code> or <code>/* */</code> comments anywhere in the document.</p>
+                                        <pre>{ "status": "ok" }
+// this comment is not allowed</pre>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p id="noRulesFound" class="text-center text-muted mt-3 d-none">No rules match your search.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div id="collapseRest" class="accordion-collapse collapse" data-bs-parent="#accordionApi">
+                        <div class="accordion-body" style="min-height: 50vh;">
+
+                            <h4 class="text-center mb-3">List of submitted data (on Forms page)</h4>
+
+                            <!-- Search on the fetched records -->
+                            <div class="mb-4 mx-auto" style="max-width:420px;">
+                                <input type="search" id="recordSearch" class="form-control" placeholder="Search results… e.g. a name or gender">
+                            </div>
+
+                            <div id="recordList" class="row row-cols-1 row-cols-md-2 g-3">
+                                <p class="text-center text-muted">Loading…</p>
+                            </div>
+
+                            <p id="noRecordsFound" class="text-center text-muted mt-3 d-none">No results match your search.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">                    
+                    <h3>
+                        <span class="bi bi-linkedin text-info m-1"></span>
+                        <span class="bi bi-facebook text-success m-1"></span>
+                        <span class="bi bi-twitter text-info m-1"></span>
+                        <span class="bi bi-youtube text-danger m-1"></span>
+                    </h3>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    ©️ 2026 Umang Maharjan
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end pe-3">
+                    <button type="button" class="btn btn-link text-dark fw-semibold text-decoration-none p-0" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        Privacy Policy
+                    </button>
+                </div>
+                <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="privacyModalLabel">
+                                    <span class="bi bi-shield-lock me-2"></span>Privacy Policy
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="font-size: 0.95rem; line-height: 1.7;">
+                                <p><strong>Disclosure of Personal Information</strong><br />
+                                We do not sell, trade, or otherwise share your personal information with
+                                outside parties, except where required by law or to provide a service
+                                you've specifically requested.</p>
+
+                                <p><strong>Protection of Personal Information</strong><br />
+                                We take the security of your personal information seriously and take
+                                reasonable steps to protect it from misuse, loss, or unauthorised access.</p>
+
+                                <p><strong>Your Rights to Access Your Personal Information</strong><br />
+                                You have the right to access, correct, or request deletion of your personal
+                                information at any time. To do so, please contact us using the details below.</p>
+
+                                <p><strong>Changes to This Policy</strong><br />
+                                This Privacy Policy may be updated from time to time. Any changes will be
+                                posted on this page along with an updated effective date.</p>
+
+                                <p><strong>Contact</strong><br />
+                                If you have any questions or concerns about this Privacy Policy,
+                                please contact <strong>Umang Maharjan</strong> at
+                                <a href="mailto:umangmaharjan.com">umangmaharjan.com</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                    <span class="bi bi-check2 me-1"></span>Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Search filter for the JSON Rules cards -->
+    <script>
+    (function(){
+        var input = document.getElementById('ruleSearch');
+        var cards = document.querySelectorAll('#ruleList .rule-card');
+        var noResults = document.getElementById('noRulesFound');
+
+        input.addEventListener('input', function(){
+            var term = input.value.trim().toLowerCase();
+            var visibleCount = 0;
+
+            cards.forEach(function(card){
+                var match = card.textContent.toLowerCase().includes(term);
+                card.closest('.col').classList.toggle('d-none', !match);
+                if (match) visibleCount++;
+            });
+
+            noResults.classList.toggle('d-none', visibleCount !== 0);
+        });
+    })();
+    </script>
+
+    <!-- REST API: Fetch submitted form data from Supabase (Fetch API / AJAX) -->
+    <script type="module">
+        const supabaseApiUrl = 'https://xnxqfmflnpeodwstiqgd.supabase.co/rest/v1/';
+        const supabaseKey = 'sb_publishable_957n6izVCjrSMKqtdoVpuA_Cda9QtrQ';
+
+        const listEl = document.getElementById('recordList');
+        const searchInput = document.getElementById('recordSearch');
+        const noRecordsEl = document.getElementById('noRecordsFound');
+        let allRecords = [];
+
+        // Fetch the rows submitted from the Forms page (stored via the Fetch API / AJAX)
+        async function fetchDataRaw() {
+            const url = `${supabaseApiUrl}survey_data?select=fname,lname,gender`;
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': supabaseKey,
+                        'Authorization': `Bearer ${supabaseKey}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Fetch error:', error);
+                listEl.innerHTML = '<p class="text-center text-danger">Could not load data from the API.</p>';
+                return [];
+            }
+        }
+
+        function renderRecords(records) {
+            listEl.innerHTML = '';
+            if (records.length === 0) {
+                listEl.innerHTML = '<p class="text-center text-muted">No submissions yet.</p>';
+                return;
+            }
+            records.forEach(function(record){
+                const col = document.createElement('div');
+                col.className = 'col';
+                col.innerHTML = `
+                    <div class="record-card">
+                        <p class="mb-1"><strong>First name:</strong> ${record.fname ?? ''}</p>
+                        <p class="mb-1"><strong>Last name:</strong> ${record.lname ?? ''}</p>
+                        <p class="mb-0"><strong>Gender:</strong> ${record.gender ?? ''}</p>
+                    </div>
+                `;
+                listEl.appendChild(col);
+            });
+        }
+
+        fetchDataRaw().then(function(data){
+            allRecords = data;
+            renderRecords(allRecords);
+        });
+
+        // Search/filter the fetched records by keyword
+        searchInput.addEventListener('input', function(){
+            const term = searchInput.value.trim().toLowerCase();
+            const filtered = allRecords.filter(function(r){
+                return `${r.fname ?? ''} ${r.lname ?? ''} ${r.gender ?? ''}`.toLowerCase().includes(term);
+            });
+            renderRecords(filtered);
+            noRecordsEl.classList.toggle('d-none', filtered.length !== 0);
+        });
+    </script>
+</body>
+</html>

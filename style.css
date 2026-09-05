@@ -1,0 +1,516 @@
+/* ---------- Root Variables ---------- */
+:root {
+    --navbar-color: #DAF7A6;
+    --showcase-color: #1a1a2e;
+    --bio-color: #FFC300;
+    --webtech-color: #EC7063;
+    --competence-color: #9CDA0D;
+    --statement-color: #F27A09;
+    --dark-text: #1a1a2e;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-custom {
+    background-color: var(--navbar-color);
+    padding: 0.5rem 0;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--dark-text);
+    display: flex;
+    align-items: center;
+}
+
+.navbar-custom .navbar-brand .bi-globe {
+    color: #2d6a4f;
+    margin-right: 6px;
+}
+
+.navbar-custom .nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0px;
+    transition: background 0.25s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+/* Highlight "HOME" with Yellow Box */
+.navbar-custom .nav-link.active {
+    background: var(--bio-color);
+    color: var(--dark-text) !important;
+}
+
+.navbar-custom .btn-search {
+    border: none;
+    background: transparent;
+    color: var(--dark-text);
+}
+
+/* ---------- Showcase / Hero ---------- */
+.showcase-wrapper {
+    position: relative;
+    height: 32vh;
+    min-height: 220px;
+    overflow: hidden;
+    background-color: var(--showcase-color);
+}
+
+.showcase-wrapper .bg-blur {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.55);
+    transform: scale(1.05);
+}
+
+.showcase-wrapper .bg-text-no-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+.showcase-wrapper .bg-text-no-box h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+
+.showcase-wrapper .bg-text-no-box h1 span {
+    color: #f9ca24;
+}
+
+.showcase-wrapper .bg-text-no-box p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px 0 0 0;
+}
+
+/* ---------- Flat Boxes (Colors & No Gaps) ---------- */
+.flat-box {
+    padding: 1.2rem;
+    height: 100%;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.bg-bio { background-color: var(--bio-color); }
+.bg-tech { background-color: var(--webtech-color); }
+.bg-comp { background-color: var(--competence-color); }
+.bg-stmt { background-color: var(--statement-color); }
+
+.section-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+/* ---------- Bio ---------- */
+.bio-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--dark-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--dark-text);
+}
+
+.bio-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+    margin-top: 10px;
+}
+
+.bio-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ---------- Tech List ---------- */
+.tech-list-mockup {
+    padding-left: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+
+
+/* ---------- Competences (Bigger & Styled Flip Cards) ---------- */
+.competence-card-mockup {
+    perspective: 1000px;
+    height: 140px; /* mobile-first base height */
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid #000; /* Black border */
+}
+
+.competence-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.competence-card-mockup.flipped .competence-card-inner {
+    transform: rotateY(180deg);
+}
+
+.competence-card-front, 
+.competence-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0;
+}
+
+.competence-card-front {
+    background: #d6eaf8; /* Light Blue Background */
+}
+
+.competence-card-front .card-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0b2e79; /* Dark Blue Text */
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.competence-card-front .card-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* CAPTURES IMAGES SO THEY DON'T JUMP OUT */
+}
+.competence-card-front .card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* forces image to fit perfectly inside the 65px box */
+}
+
+
+
+.competence-card-back {
+    background: var(--dark-text);
+    color: #fff;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.competence-card-back .back-title {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+.competence-card-back p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* ---------- Statement ---------- */
+.stmt-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+/* ---------- Footer ---------- */
+.footer-custom {
+    background-color: var(--navbar-color);
+    padding: 0.8rem 0;
+    border-top: 2px solid #2d6a4f; /* Dark green border */
+}
+
+.footer-custom .social-icon {
+    font-size: 1.6rem;
+    margin: 0 0.4rem;
+    color: var(--dark-text);
+    transition: transform 0.2s;
+}
+
+.footer-custom .social-icon:hover { transform: scale(1.1); }
+
+.footer-custom .footer-text {
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+/* ---------- Media Queries ---------- */
+@media (min-width: 768px) {
+    .showcase-wrapper .bg-text-no-box h1 { font-size: 2.8rem; }
+    .bio-avatar { width: 120px; height: 120px; font-size: 6rem; }
+    .flat-box { padding: 1.8rem 2rem; }
+    .competence-card-mockup { height: 160px; }
+}
+
+/* ---------- Form Page (form.html) ---------- */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar (same as index.html) */
+.navbar {
+    background: linear-gradient(#d8f6bf, #b8df95);
+    border-bottom: 1px solid gray;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav { margin: auto; }
+}
+
+.dropdown-menu {
+    min-width: 180px;
+}
+
+/* Main area */
+main {
+    flex: 1;
+}
+
+/* Form-page tab buttons (HTML FORM / GOOGLE FORM), styled to match the mockup */
+.accordion-button {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1155cc;
+    background: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #f7a600;
+    color: #0b2447;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+/* Footer (same as index.html) */
+footer {
+    background: linear-gradient(#d8f6bf, #b8df95);
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+
+
+/* ---------- WebAPI Page (WebAPI.html) ---------- */
+/* Navbar (same as index.html) */
+html,body{ height:100%; }
+body{ display:flex; flex-direction:column; }
+
+/* Navbar (same as index.html) */
+.navbar{
+    background:linear-gradient(#d8f6bf,#b8df95);
+    border-bottom:1px solid gray;
+}
+@media(min-width:768px){
+    .navbar-nav{ margin:auto; }
+}
+.dropdown-menu{ min-width:180px; }
+
+/* Main area */
+main{ flex:1; }
+
+.accordion-button{
+    font-weight:700;
+    text-transform:uppercase;
+    color:#1155cc;
+    background:#fff;
+}
+.accordion-button:not(.collapsed){
+    background:#f7a600;
+    color:#0b2447;
+    box-shadow:none;
+}
+.accordion-button::after{
+    display:none;
+}
+
+/* JSON rule cards */
+.rule-card{
+    height:100%;
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+    background:#fff;
+}
+.rule-card pre{
+    background:#0d1117;
+    color:#3fb950;
+    padding:.6rem;
+    border-radius:6px;
+    font-size:.8rem;
+    white-space:pre-wrap;
+    margin:.5rem 0 0;
+}
+.rule-card.d-none{ display:none !important; }
+
+/* REST API record cards */
+.record-card{
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+    background:#f7f7f7;
+}
+
+/* Footer (same as index.html / form.html) */
+footer{
+    background:linear-gradient(#d8f6bf,#b8df95);
+    padding:10px;
+    border-top:1px solid gray;
+}
+
+/* ---------- JavaScript Demo Page (jsdemo.html) ---------- */
+/* Navbar (same as index.html) */
+html,body{ height:100%; }
+body{ display:flex; flex-direction:column; }
+
+/* Navbar */
+.navbar{
+    background:linear-gradient(#d8f6bf,#b8df95);
+    border-bottom:1px solid gray;
+}
+@media(min-width:768px){
+    .navbar-nav{ margin:auto; }
+}
+.dropdown-menu{ min-width:180px; }
+
+/* Main area */
+main{ flex:1; }
+
+/* Tab buttons (DEMO 1-4) */
+.accordion-button{
+    font-weight:700;
+    text-transform:uppercase;
+    color:#1155cc;
+    background:#fff;
+}
+.accordion-button:not(.collapsed){
+    background:#f7a600;
+    color:#0b2447;
+    box-shadow:none;
+}
+.accordion-button::after{
+    display:none;
+}
+
+/* Demo 1: Slideshow */
+.slideshow-wrap{
+    max-width:520px;
+    margin:0 auto;
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+}
+.slide{ display:none; }
+.slide.is-active{ display:block; }
+.slide-media{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+.slide img{ width:100%; height:220px; object-fit:cover; border-radius:6px; }
+.slide-caption{ padding:.75rem 0 0; text-align:center; }
+
+/* Demo 2: dropdown + add to list */
+.item-preview{
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+}
+.item-preview img{
+    max-width:100%;
+    max-height:220px;
+    object-fit:contain;
+}
+
+/* Demo 3: comment demo iframe */
+#commentFrame{
+    width:100%;
+    height:900px;
+    border:1px solid #dee2e6;
+    border-radius:8px;
+}
+
+/* Demo 4: shopping cart */
+.product-card{
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+    height:100%;
+    background:#fff;
+}
+.product-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:6px;
+    margin-bottom:.5rem;
+}
+#cartPanel{
+    border:1px solid #dee2e6;
+    border-radius:8px;
+    padding:1rem;
+    background:#f7f7f7;
+}
+/* Footer (same as other pages) */
+footer{
+    background:linear-gradient(#d8f6bf,#b8df95);
+    padding:10px;
+    border-top:1px solid gray;
+}

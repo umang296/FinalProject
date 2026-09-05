@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!--Bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+  <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .product-image {
+          width: 100%;
+          border-radius: 12px;
+      }
+      .review-card {
+          margin-bottom: 15px;
+      }
+      .rating {
+          color: #ffc107;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="container my-5">
+    <!-- Product Section -->
+    <div class="card shadow-sm mb-5">
+      <div class="row g-0">
+        <!-- Product image column -->
+        <div class="col-md-5">
+          <img id="productImage" class="product-image" alt="Product Image">
+        </div>
+
+        <!-- Product information column -->
+        <div class="col-md-7">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2" id="productCategory"></span>
+            <h2 id="productName"></h2>
+            <h3 class="text-success mb-3" id="productPrice"></h3>
+            <p id="productDescription"></p>
+            <div class="mb-2"><strong>Status:</strong><span id="stockStatus"></span></div>
+            <div><strong>Stock Quantity:</strong><span id="stockQuantity"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="mb-4">
+        <h3>Customer Reviews</h3>
+        <div id="reviewsContainer"></div>
+    </div>
+
+    <!-- Add Review -->
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h4 class="mb-0">Add Review</h4>
+      </div>
+      <div class="card-body">
+        <form id="reviewForm">
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" id="reviewUser" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Rating</label>
+            <select id="reviewRating" class="form-select" required>
+                <option value="">Select Rating</option>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Comment</label>
+            <textarea id="reviewComment" class="form-control" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+    //-------------------------------------------------------------
+    const product = {
+        id: 1,
+        category: "Smartphone",
+        name: "Apple iPhone 17",
+        price: 2000,
+        description: "A modern smartphone designed for communication, photography, apps, and everyday use.",
+        inStock: true,
+        stockQuantity: 25,
+        image: "Images/Iphone17.webp",
+        reviews: [
+            {
+                user: "Peski",
+                rating: 4,
+                date: "2025-08-15",
+                comment: "Good phone and has an amazing camera."
+            },
+            {
+                user: "Umang",
+                rating: 3,
+                date: "2026-05-115",
+                comment: "Very fast and responsive, but expensive."
+            },
+            {
+                user: "Terrence",
+                rating: 2,
+                date: "2026-03-07",
+                comment: "Not my type."
+            }
+        ]
+    };
+
+    //-------------------------------------------------------------
+    //Load Product
+    const loadProduct = () => {
+      // Copy the product data into the matching elements on the page.
+      document.getElementById("productCategory").textContent = product.category;
+      document.getElementById("productName").textContent = product.name;
+      document.getElementById("productPrice").textContent ="$" + product.price.toLocaleString();
+      document.getElementById("productDescription").textContent = product.description;
+      document.getElementById("productImage").src = product.image;
+      // Show a different badge depending on the product's availability.
+      document.getElementById("stockStatus").innerHTML =
+        product.inStock
+            ? '<span class="badge bg-success">In Stock </span>'
+            : '<span class="badge bg-danger">Out of Stock </span>';
+      document.getElementById("stockQuantity").textContent = product.stockQuantity;
+    }
+
+    //-------------------------------------------------------------
+    // Render Reviews
+    const renderReviews = () => {
+      const container = document.getElementById("reviewsContainer");
+      container.innerHTML = "";
+      // Rebuild the list so newly added reviews appear immediately.
+      product.reviews.forEach(review => {
+        // Display filled stars for the rating and empty stars for the remainder.
+        const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+        container.innerHTML += `
+          <div class="card review-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>${review.user}</h5>
+                <small class="text-muted">${review.date}</small>
+              </div>
+              <div class="rating mb-2"> ${stars} </div>
+              <p class="mb-0">${review.comment}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    //-------------------------------------------------------------
+    // Add Review
+    document.getElementById("reviewForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      // Read the submitted values from the form controls.
+      const user = document.getElementById("reviewUser").value;
+      const rating = parseInt(document.getElementById("reviewRating").value);
+      const comment = document.getElementById("reviewComment").value;
+      const newReview = {
+          user,
+          rating,
+          comment,
+          date: new Date().toISOString().split("T")[0]
+      };
+      // Add the newest review to the beginning of the review list.
+      product.reviews.unshift(newReview);
+      renderReviews();
+      this.reset();
+      alert("Review added successfully!");
+    });
+    // Populate the product details and existing reviews when the page loads.
+    loadProduct();
+    renderReviews();
+    
+</script>
+
+</body>
+</html>

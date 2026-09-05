@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umang Maharjan - Web Portfolio</title>
+
+    <!-- Link to External Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts for a polished look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ============================================================ -->
+    <!--  NAVBAR                                                       -->
+    <!-- ============================================================ -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid px-3 px-md-4">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-3 me-1"></span>ITWD6.408
+            </a>
+
+            <!-- Mobile search button (visible on small) -->
+            <button class="btn btn-search d-inline d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fs-6 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebAPI.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jsdemo.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-research.html">RESEARCH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Desktop search button (large screens) -->
+            <button class="btn btn-search d-none d-lg-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                <span class="bi bi-search fs-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Collapsible Search Bar -->
+    <div class="collapse" id="collapseSearch">
+        <div class="container py-2">
+            <div class="card card-body shadow-sm">
+                <form class="d-flex" role="search" method ="get" action="https://www.google.com/search">
+                    <input class="form-control me-2" type="search" placeholder="Search the site…" aria-label="Search" />
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  MAIN CONTENT (FULL WIDTH, 0 GAPS)                            -->
+    <!-- ============================================================ -->
+    <main>
+        <!-- Use full width layout -->
+        <div class="container-fluid p-0">
+
+            <!-- ===== SHOWCASE / HERO ===== -->
+            <div class="row g-0">
+                <div class="col-12">
+                    <section class="showcase-wrapper">
+                        <div class="bg-blur"></div>
+                        <div class="bg-text-no-box">
+                            <h1>I am <span>Umang Maharjan</span></h1>
+                            <p><em>And I'm a student</em></p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== ROW 1: BIO + WEB TECHNOLOGIES  ===== -->
+            <div class="row g-0">
+                <!-- BIO -->
+                <div class="col-12 col-md-6">
+                    <div class="flat-box bg-bio">
+                        <h2 class="section-title">BIO</h2>
+                        <div class="row align-items-start g-3">
+                            <div class="col-12 col-sm-4 text-center text-sm-start">
+                                <div class="bio-avatar">
+                                    <img src="Images/myphoto.png" alt="Umang Maharjan">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p class="bio-text">
+                                    Hi, I'm Umang Maharjan, a Bachelor of Computing Systems student at EIT, currently studying in Napier/Hawke's Bay, New Zealand. 
+                                    Outside of my studies, I'm into sneakers, fashion, coffee, and perfume . I enjoy the design and craft side of these as much as the products themselves. 
+                                </p>
+                                <p class="bio-text">
+                                    I'm taking this web development course because I want to build a strong foundation in front-end and back-end skills that I can apply to real projects, not just assignments. 
+                                    Design has always interested me, and I like the idea of combining that eye for aesthetics with the technical side of coding.
+                                     By the end of this course, I hope to walk away with a solid portfolio, more confidence writing clean code, and a better sense of whether web development is a path I want to pursue further in my career.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- WEB TECHNOLOGIES -->
+                <div class="col-12 col-md-6">
+                    <div class="flat-box bg-tech">
+                        <h2 class="section-title">MY WEB TECHNOLOGIES</h2>
+                        <p class="fw-semibold mb-2">My top 5 web technologies</p>
+                        <ol class="tech-list-mockup">
+                            <li><strong>Hosting</strong>: I use GitHub Pages to host and share my project files, since it integrates easily with version control and is free for student projects.</li>
+                            <li><strong>Web Design</strong>: I design layouts using HTML and CSS, focusing on clean, responsive structures before adding styling details like typography and spacing</li>
+                            <li><strong>Database</strong>: I work with MySQL for structuring and querying relational data in back-end projects.</li>
+                            <li><strong>Code Editor</strong>: I use Visual Studio Code for most of my development work, thanks to its extensions for live preview, formatting, and Git integration.</li>
+                            <li><strong>Web Frameworks</strong>: I'm currently learning JavaScript fundamentals and plan to explore frameworks like React as I progress through the course.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ROW 2: COMPETENCES  ===== -->
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="flat-box bg-comp">
+                        <h2 class="section-title">MY WEB DEVELOPMENT COMPETENCES</h2>
+                        
+                        <!-- Added g-3 for spacing between cards and justify-content-center to center them -->
+                        <div class="row g-3 justify-content-center">
+                            
+                            <!-- Flip Card 1: HTML -->
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="competence-card-mockup" onclick="this.classList.toggle('flipped')">
+                                    <div class="competence-card-inner">
+                                        <div class="competence-card-front">
+                                            <div class="card-title">MARK-UP (HTML5)</div>
+                                            <div class="card-logo"><img src="Images/html5.png" alt="HTML5"></div>
+                                        </div>
+                                        <div class="competence-card-back">
+                                            <span class="back-title">Competence</span>
+                                            <p><strong>HTML5</strong><br />Semantic structure and accessible markup.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flip Card 2: CSS -->
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="competence-card-mockup" onclick="this.classList.toggle('flipped')">
+                                    <div class="competence-card-inner">
+                                        <div class="competence-card-front">
+                                            <div class="card-title">STYLING (CSS3)</div>
+                                            <div class="card-logo"><img src="Images/css3.png" alt="CSS3"></div>
+                                        </div>
+                                        <div class="competence-card-back">
+                                            <span class="back-title">Competence</span>
+                                            <p><strong>CSS3</strong><br />Advanced layouts and responsive design.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flip Card 3: JavaScript -->
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="competence-card-mockup" onclick="this.classList.toggle('flipped')">
+                                    <div class="competence-card-inner">
+                                        <div class="competence-card-front">
+                                            <div class="card-title">JAVASCRIPT</div>
+                                            <div class="card-logo"><img src="Images/javascript.png" alt="JavaScript"></div>
+                                        </div>
+                                        <div class="competence-card-back">
+                                            <span class="back-title">Competence</span>
+                                            <p><strong>JavaScript</strong><br />DOM manipulation and event handling.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ROW 3: STATEMENT  ===== -->
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="flat-box bg-stmt">
+                        <h2 class="section-title">This is statement of authenticity</h2>
+                        <p class="mb-0 stmt-text">
+                            “I confirm that: This is an original assessment and is entirely my own work. It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text. No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+   <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                    <h3>
+                        <span class="bi bi-linkedin text-info m-1"></span>
+                        <span class="bi bi-facebook text-success m-1"></span>
+                        <span class="bi bi-twitter text-info m-1"></span>
+                        <span class="bi bi-youtube text-danger m-1"></span>
+                    </h3>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    ©️ 2026 Umang Maharjan
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end pe-3">
+                    <button type="button" class="btn btn-link text-dark fw-semibold text-decoration-none p-0" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        Privacy Policy
+                    </button>
+                </div>
+                <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="privacyModalLabel">
+                                    <span class="bi bi-shield-lock me-2"></span>Privacy Policy
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="font-size: 0.95rem; line-height: 1.7;">
+                                <p><strong>Disclosure of Personal Information</strong><br />
+                                We do not sell, trade, or otherwise share your personal information with
+                                outside parties, except where required by law or to provide a service
+                                you've specifically requested.</p>
+
+                                <p><strong>Protection of Personal Information</strong><br />
+                                We take the security of your personal information seriously and take
+                                reasonable steps to protect it from misuse, loss, or unauthorised access.</p>
+
+                                <p><strong>Your Rights to Access Your Personal Information</strong><br />
+                                You have the right to access, correct, or request deletion of your personal
+                                information at any time. To do so, please contact us using the details below.</p>
+
+                                <p><strong>Changes to This Policy</strong><br />
+                                This Privacy Policy may be updated from time to time. Any changes will be
+                                posted on this page along with an updated effective date.</p>
+
+                                <p><strong>Contact</strong><br />
+                                If you have any questions or concerns about this Privacy Policy,
+                                please contact <strong>Umang Maharjan</strong> at
+                                <a href="mailto:umangmaharjan.com">umangmaharjan.com</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                    <span class="bi bi-check2 me-1"></span>Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!--  BOOTSTRAP BUNDLE JS                                          -->
+    <!-- ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
